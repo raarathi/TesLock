@@ -1,27 +1,12 @@
 package com.example.bcorcoran.teslock;
 
-//Grabs RestTemplate from Rest API
-import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.http.converter.StringHttpMessageConverter;
 
-public class teslaapi {
+public class Teslaapi {
 
-//Requesting data from the car
-    public RestTemplate()
+    String url = "http://localhost:8080/mockTesla/vehicles/1234567890/command/drive_state";
     RestTemplate restTemplate = new RestTemplate();
-    restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-    return restTemplate.postForObject(uri, advertisement, String.class);
-
-//initial dummy tesla car data
-    200(OK)
-    Content-Type:application/json
-
-    {
-        "shift_state":null,          //
-            "speed":null,                //
-            "latitude":33.794839,        // degrees N of equator
-            "longitude":-84.401593,      // degrees W of the prime meridian
-            "heading":4,                 // integer compass heading, 0-359
-            "gps_as_of":1359863204       // Unix timestamp of GPS fix
-    }
+    restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
+    String result = restTemplate.getForObject(url, String.class, "Android")
 }
