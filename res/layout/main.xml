@@ -3,12 +3,15 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-        >
+              >
+              <!-- android:keepScreenOn="true" -->
 
     <Button android:layout_width="fill_parent" android:layout_height="fill_parent"
             android:id="@+id/button"
             android:text="LOCK IT"
             android:textStyle="bold"
-            />
+            android:textColor="#000000"
+            android:shadowColor="#000000"
+            android:background="#ff000000"/>
 </LinearLayout>
 
